@@ -6,6 +6,12 @@
 npm i -g typescript
 ```
 
+## Generate tsconfig file
+
+```
+tsc --init
+```
+
 ## Make change to tsconfig
 
 ```

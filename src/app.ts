@@ -1,9 +1,11 @@
-import express from "express"
-const app = express();
+import express, {
+  Application,
+} from "express";
+const app: Application = express();
 
-app.get('/', (req, res) => {
-  res.send("hello")
-})
+
+var routes = require('./routes/route.ts');
+app.use("/", routes)
 
 
 app.listen(5000, () => console.log("server running on port 5000"))
