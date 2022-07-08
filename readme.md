@@ -43,3 +43,32 @@ npm i -D typescript ts-node nodemon @types/node @types/express
   "build": "tsc -p ."
 },
 ```
+
+# 2. ORM
+
+## install packages
+
+```
+npm install typeorm
+npm install reflect-metadata
+```
+
+## add reflect-metadata global place of your app eg. app.js
+
+```
+import "reflect-metadata"
+```
+
+## add to tsconfig
+
+```
+"emitDecoratorMetadata": true,
+"experimentalDecorators": true,
+"strictPropertyInitialization": false
+```
+
+## init typeorm config
+
+```
+npx typeorm init
+```
