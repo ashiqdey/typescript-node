@@ -1,7 +1,7 @@
-import express, { Request, Response } from "express";
+import express, { Request, Response } from 'express';
 const router = express.Router();
 
-router.get("/", (req: Request, res: Response) => {
+router.get('/', (req: Request, res: Response) => {
   res.send(`Response from backend at ${new Date().toISOString()}`);
 });
 

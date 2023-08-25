@@ -1,18 +1,18 @@
-import express, { Request, Response } from "express";
+import express, { Request, Response } from 'express';
 
-import { User } from "../entity/User";
-import { Profile } from "../entity/Profile";
-import { AppDataSource } from "../data-source";
+import { User } from '../entity/User';
+import { Profile } from '../entity/Profile';
+import { AppDataSource } from '../data-source';
 const userRepo = AppDataSource.getRepository(User);
 const profileRepo = AppDataSource.getRepository(Profile);
 
 const router = express.Router();
 
-router.get("/", (req: Request, res: Response) => {
-  res.send(`orm`);
+router.get('/', (req: Request, res: Response) => {
+  res.send('orm');
 });
 
-router.get("/users", (req: Request, res: Response) => {
+router.get('/users', (req: Request, res: Response) => {
   // userRepo.find() /* get fom single table*/
 
   // find with relation
@@ -28,7 +28,7 @@ router.get("/users", (req: Request, res: Response) => {
     });
 });
 
-router.get("/users/:id", (req: Request, res: Response) => {
+router.get('/users/:id', (req: Request, res: Response) => {
   const { id } = req.params;
 
   userRepo
@@ -46,15 +46,15 @@ router.get("/users/:id", (req: Request, res: Response) => {
     });
 });
 
-router.post("/users", (req: Request, res: Response) => {
+router.post('/users', (req: Request, res: Response) => {
   const { firstName, lastName, age, gender, photo } = req.body;
 
-  let profile: Profile = new Profile();
+  const profile: Profile = new Profile();
   profile.gender = gender;
   profile.photo = photo;
 
   // insert user
-  let user: User = new User();
+  const user: User = new User();
   user.firstName = firstName;
   user.lastName = lastName;
   user.age = age;
@@ -68,11 +68,11 @@ router.post("/users", (req: Request, res: Response) => {
     })
     .catch((err: any) => {
       console.log(err);
-      res.send(`insert error`);
+      res.send('insert error');
     });
 });
 
-router.put("/users/:id", (req: Request, res: Response) => {
+router.put('/users/:id', (req: Request, res: Response) => {
   const { id } = req.params;
   const { firstName, lastName, age } = req.body;
 
@@ -87,31 +87,31 @@ router.put("/users/:id", (req: Request, res: Response) => {
     })
     .catch((err: any) => {
       console.log(err);
-      res.send(`update error`);
+      res.send('update error');
     });
 });
 
-router.delete("/users/:id", (req: Request, res: Response) => {
+router.delete('/users/:id', (req: Request, res: Response) => {
   const { id } = req.params;
 
   userRepo
     .delete(id)
-    .then((_) => res.json("deleted"))
+    .then((_) => res.json('deleted'))
     .catch((err: any) => {
       console.log(err);
-      res.send(`error deleting`);
+      res.send('error deleting');
     });
 });
 
-router.delete("/profile/:id", (req: Request, res: Response) => {
+router.delete('/profile/:id', (req: Request, res: Response) => {
   const { id } = req.params;
 
   profileRepo
     .delete(id)
-    .then((_) => res.json("deleted"))
+    .then((_) => res.json('deleted'))
     .catch((err: any) => {
       console.log(err);
-      res.send(`error deleting`);
+      res.send('error deleting');
     });
 });
 
