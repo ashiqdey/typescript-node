@@ -1,4 +1,6 @@
 # Nodejs with typescript
+This is basic templete for nodejs with typescript
+Without eslint, test, typeorm
 
 ## Install typescript globally
 
