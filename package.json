@@ -9,6 +9,7 @@
     "build": "tsc -p .",
     "typeorm": "typeorm-ts-node-commonjs",
     "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
     "format": "prettier --write .",
     "lint-and-format": "npm run lint && npm run format"
   },

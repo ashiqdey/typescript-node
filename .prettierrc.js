@@ -1,7 +1,7 @@
 // .prettierrc.js
 module.exports = {
     semi: true,
-    singleQuote: false,
+    singleQuote: true,
     trailingComma: 'es5',
-    ignorePatterns: ['dist/'],
+    ignorePatterns: ['dist/', 'backups/'],
 };
