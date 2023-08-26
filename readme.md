@@ -1,4 +1,6 @@
 # Nodejs with typescript
+This template conatins nodejs with typescript, typeorm, eslint, prettier, and unit test with jest.
+
 
 ## Install typescript globally
 
