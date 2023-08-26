@@ -1,7 +1,8 @@
 import express, { Application, Request, Response, NextFunction } from 'express';
-const router = express.Router();
 
 const add = (a: number, b: number): number => a + b;
+
+const router = express.Router();
 
 router.get('/', (req: Request, res: Response, next: NextFunction) => {
   res.send(`sum of 3,4 is ${add(3, 4)}`);
@@ -167,4 +168,5 @@ router.get('/enums', (req: Request, res: Response, next: NextFunction) => {
   res.send('statuses');
 });
 
-module.exports = router;
+// module.exports = router;
+export default router;
