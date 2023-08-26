@@ -1,4 +1,6 @@
 # Nodejs with typescript
+This is basic templete for nodejs with typescript
+Without eslint, test, typeorm
 
 This template conatins nodejs with typescript, typeorm, eslint, prettier, and unit test with jest.
 
